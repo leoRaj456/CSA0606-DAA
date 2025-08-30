@@ -1,0 +1,11 @@
+def process_list(nums):
+    if not nums:
+        return None  # or return "List is empty"
+    
+    nums.sort()  # Efficient sort (Timsort, O(n log n))
+    return nums[-1]  # Last element is the maximum after sorting
+
+
+print(process_list([]))              
+print(process_list([5]))             
+print(process_list([3, 3, 3, 3, 3]))
