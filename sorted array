@@ -1,0 +1,30 @@
+def binary_search(arr, key):
+    arr.sort()  # Sort the array first
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2
+        
+        if arr[mid] == key:
+            return mid  # Found key at index mid
+        elif arr[mid] < key:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return -1  # Key not found
+
+arr1 = [3, 4, 6, -9, 10, 8, 9, 30]
+key1 = 10
+pos1 = binary_search(arr1, key1)
+if pos1 != -1:
+    print(f"Element {key1} is found at position {pos1}")
+else:
+    print(f"Element {key1} is not found")
+
+key2 = 100
+pos2 = binary_search(arr1, key2)
+if pos2 != -1:
+    print(f"Element {key2} is found at position {pos2}")
+else:
+    print(f"Element {key2} is not found")
